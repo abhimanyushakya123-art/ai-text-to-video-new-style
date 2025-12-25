@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Text to Video</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Text to AI Video</h2>
+
+<div id="formBox">
+  <textarea id="prompt" placeholder="Enter your story"></textarea>
+
+  <select id="style">
+    <option value="anime">Anime</option>
+    <option value="vintage">Vintage</option>
+    <option value="clay">Clay</option>
+    <option value="airbrush">Airbrush</option>
+  </select>
+
+  <select id="duration">
+    <option value="10">10 Seconds</option>
+    <option value="20">20 Seconds</option>
+    <option value="30">30 Seconds</option>
+  </select>
+
+  <button id="generateBtn" onclick="generate()">Generate Video</button>
+</div>
+
+<!-- LOADING SCREEN -->
+<div id="loadingBox" class="hide">
+  <div class="spinner"></div>
+  <p id="loadingText">Generating your video… please wait</p>
+  <progress id="progress" value="0" max="100"></progress>
+</div>
+
+<!-- RESULT -->
+<div id="resultBox" class="hide">
+  <video id="video" controls></video>
+  <button onclick="resetUI()">Generate Another</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
